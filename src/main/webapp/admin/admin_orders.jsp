@@ -27,7 +27,7 @@
         <c:forEach var="order" items="${orders}">
             <div class="order-card">
                 <div class="order-info">
-                    <div class="order-icon">${order.serviceType == 'Shoes Wash' ? '👟' : '👕'}</div>
+                    <div class="order-icon">${order.serviceType == 'Shoe Wash' ? '👟' : '👕'}</div>
                     <div>
                         <h2>${order.serviceType}</h2>
                         <form action="${pageContext.request.contextPath}/admin/admin_orders" method="POST">
@@ -42,7 +42,7 @@
                                 <input type="hidden" name="order_id" value="${order.orderId}">
                                 <button type="submit" name="update_order_status">Update</button>
                                 <button type="submit" name="delete_order">Delete</button>
-                            </p>
+                            </p>                           
                             <p>Ordered on: <fmt:formatDate value="${order.orderDate}" pattern="yyyy-MM-dd" /></p>
                         </form>
                     </div>

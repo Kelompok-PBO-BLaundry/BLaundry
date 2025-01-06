@@ -1,0 +1,257 @@
+body {
+    font-family: 'Poppins';
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.gradient-container {
+    background: linear-gradient(to bottom, #0092ff, #ffffff);
+    color: black;
+    padding-bottom: 20px;
+    width: 100%;
+}
+
+header {
+    background: transparent;
+    padding: 10px 0;
+    width: 100%;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    flex-wrap: wrap;
+}
+
+header nav .nav-left {
+    display: flex;
+    gap: 50px;
+    margin-left: 20px;
+    flex-wrap: wrap;
+}
+
+header nav .nav-right {
+    margin-right: 20px;
+}
+
+header nav a {
+    text-decoration: none;
+    color: black;
+    padding: 5px 15px;
+    transition: color 0.3s, background 0.3s;
+}
+
+header nav a:hover {
+    background: #66b3ff;
+    color: white;
+    border-radius: 5px;
+}
+
+.welcome {
+    background: transparent;
+    padding: 20px;
+}
+
+main .services {
+    display: flex;
+    min-height: 400px;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+main .services .left-section {
+    background-color: #023E69;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 300px;
+    padding: 20px;
+}
+
+main .services .left-section .service {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+main .services .left-section .icons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+main .services .left-section img {
+    width: 50px;
+    height: auto;
+    margin: 5px;
+}
+
+main .services .right-section {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 300px;
+}
+
+main .services .right-section .top-section,
+main .services .right-section .bottom-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+main .services .right-section .top-section {
+    background-color: #2A6EA1;
+}
+
+main .services .right-section .bottom-section {
+    background-color: #178FE5;
+}
+
+main .services .right-section .service {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main .services .right-section .service img {
+    width: 50px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+main .services .right-section .service p {
+    font-size: 16px;
+    margin: 0;
+}
+
+footer {
+    background: #ffcc66;
+    color: black;
+    padding: 20px;
+    font-size: 14px;
+    width: 100%;
+}
+
+footer .footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+footer .left-section {
+    flex: 1;
+    text-align: left;
+    min-width: 250px;
+}
+
+footer .location,
+footer .operational-hour {
+    margin-bottom: 20px;
+}
+
+footer .contact {
+    flex: 1;
+    text-align: right;
+    min-width: 250px;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+footer p.strong {
+    font-weight: bold;
+}
+
+.footer-rights {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+    header nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    header nav .nav-left {
+        margin: 0;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    header nav .nav-right {
+        margin: 10px 0;
+    }
+
+    main .services {
+        flex-direction: column;
+    }
+
+    footer .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    footer .left-section {
+        text-align: center;
+        margin-right: 0;
+    }
+
+    footer .contact {
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    header nav .nav-left {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .welcome h1 {
+        font-size: 24px;
+    }
+
+    .welcome p {
+        font-size: 16px;
+    }
+
+    main .services .left-section,
+    main .services .right-section {
+        min-width: 100%;
+    }
+
+    footer {
+        padding: 15px;
+    }
+}
+
+/* Make services clickable and show hover effect */
+.service {
+    cursor: pointer;
+    transition: transform 0.3s, opacity 0.3s;
+    padding: 20px;
+}
+
+.service:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}

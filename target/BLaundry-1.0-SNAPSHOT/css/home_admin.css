@@ -1,0 +1,138 @@
+body {
+    font-family: 'Poppins';
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.gradient-container {
+    background: linear-gradient(to bottom, #0092ff, #ffffff);
+    color: black;
+    padding-bottom: 0;
+}
+
+header {
+    background: transparent;
+    padding: 10px 0;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+header nav .nav-left {
+    display: flex;
+    margin-left: 80px;
+    gap: 100px;
+}
+
+header nav .nav-right {
+    margin-right: 80px;
+    margin-left: auto;
+}
+
+header nav a {
+    text-decoration: none;
+    color: black;
+    padding: 5px 15px;
+    transition: color 0.3s, background 0.3s;
+}
+
+header nav a:hover {
+    background: #66b3ff;
+    color: white;
+    border-radius: 5px;
+}
+
+.welcome {
+    padding: 20px 0;
+}
+
+.manage-data {
+    background: black;
+    color: white;
+    padding: 10px 0;
+}
+
+.manage-data .admin-profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.manage-data img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+main .services {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+}
+
+main .services .service {
+    flex: 1;
+    margin: 0;
+    padding: 20px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0;
+}
+
+main .services .service:nth-child(1) {
+    background: #023E69;
+}
+
+main .services .service:nth-child(2) {
+    background: #178FE5;
+}
+
+main .services .service:nth-child(3) {
+    background: #2A6EA1;
+}
+
+main .services .service img {
+    width: 50px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+footer {
+    background: #ffcc66;
+    color: black;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 14px;
+}
+
+footer .footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+footer .left-section {
+    flex: 1;
+    text-align: left;
+    margin-right: 20px;
+}
+
+footer .contact {
+    flex: 1;
+    text-align: right;
+}
