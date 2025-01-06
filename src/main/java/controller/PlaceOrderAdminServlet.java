@@ -37,6 +37,9 @@ public class PlaceOrderAdminServlet extends HttpServlet {
 
         String customerName = request.getParameter("customer_name");
         String serviceType = request.getParameter("service_type");
+        double weight = Double.parseDouble(request.getParameter("weight"));
+        double totalItem = Double.parseDouble(request.getParameter("number_of_items"));
+        String duration = request.getParameter("duration");
         double totalAmount = Double.parseDouble(request.getParameter("total_amount"));
         String deliveryAddress = request.getParameter("delivery_address");
 
@@ -53,9 +56,12 @@ public class PlaceOrderAdminServlet extends HttpServlet {
         order.setOrderDate(date);
         order.setOrderStatus("Pending");
         order.setServiceType(serviceType);
+        order.setTotalWeight(weight);
+        order.setTotalItem(totalItem);
+        order.setDuration(duration);
         order.setTotalAmount(totalAmount);
         order.setDeliveryAddress(deliveryAddress);
-        order.setCustomerId(customer.getCustomerId());
+        order.setCustomerId(customer.getUserID());
 
         int orderId = orderService.placeAdminOrder(order);
 

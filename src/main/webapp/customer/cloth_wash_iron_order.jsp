@@ -32,7 +32,7 @@
             <div class="order-box">
                 <div class="order-form">
                     <form action="${pageContext.request.contextPath}/customer/placeOrder" method="POST">
-                        <input type="hidden" name="service_type" value="Wash">
+                        <input type="hidden" name="service_type" value="Wash Iron">
                         <div class="form-group">
                             <label for="weight">Weight (Kg):</label>
                             <input type="number" id="weight" name="weight" min="1" placeholder="Enter weight" required>

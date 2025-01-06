@@ -14,16 +14,19 @@ import java.util.List;
 public class OrderService {
 
     public int placeCustomerOrder(Order order) {
-        String sql = "INSERT INTO ORDERS (OrderDate, OrderStatus, ServiceType, TotalAmount, DeliveryAddress, CustomerID) VALUES (?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO ORDERS (OrderDate, OrderStatus, ServiceType, TotalWeight, TotalItem, Duration, TotalAmount, DeliveryAddress, CustomerID) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
         try (Connection conn = DatabaseConfig.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
 
             stmt.setDate(1, order.getOrderDate());
             stmt.setString(2, order.getOrderStatus());
             stmt.setString(3, order.getServiceType());
-            stmt.setDouble(4, order.getTotalAmount());
-            stmt.setString(5, order.getDeliveryAddress());
-            stmt.setInt(6, order.getCustomerId());
+            stmt.setDouble(4, order.gettTotalWeight());
+            stmt.setDouble(5, order.gettTotalItem());
+            stmt.setString(6, order.getDuration());
+            stmt.setDouble(7, order.getTotalAmount());
+            stmt.setString(8, order.getDeliveryAddress());
+            stmt.setInt(9, order.getCustomerId());
             
             stmt.executeUpdate();
 
@@ -41,16 +44,19 @@ public class OrderService {
     }
     
     public int placeAdminOrder(Order order) {
-        String sql = "INSERT INTO ORDERS (OrderDate, OrderStatus, ServiceType, TotalAmount, DeliveryAddress, CustomerID) VALUES (?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO ORDERS (OrderDate, OrderStatus, ServiceType, TotalWeight, TotalItem, Duration, TotalAmount, DeliveryAddress, CustomerID) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
         try (Connection conn = DatabaseConfig.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
 
             stmt.setDate(1, order.getOrderDate());
             stmt.setString(2, order.getOrderStatus());
             stmt.setString(3, order.getServiceType());
-            stmt.setDouble(4, order.getTotalAmount());
-            stmt.setString(5, order.getDeliveryAddress());
-            stmt.setInt(6, order.getCustomerId());
+            stmt.setDouble(4, order.gettTotalWeight());
+            stmt.setDouble(5, order.gettTotalItem());
+            stmt.setString(6, order.getDuration());
+            stmt.setDouble(7, order.getTotalAmount());
+            stmt.setString(8, order.getDeliveryAddress());
+            stmt.setInt(9, order.getCustomerId());
             
             stmt.executeUpdate();
 
@@ -81,6 +87,9 @@ public class OrderService {
                     order.setOrderDate(rs.getDate("OrderDate"));
                     order.setOrderStatus(rs.getString("OrderStatus"));
                     order.setServiceType(rs.getString("ServiceType"));
+                    order.setTotalWeight(rs.getDouble("TotalWeight"));
+                    order.setTotalItem(rs.getDouble("TotalItem"));
+                    order.setDuration(rs.getString("Duration"));
                     order.setTotalAmount(rs.getDouble("TotalAmount"));
                     order.setDeliveryAddress(rs.getString("DeliveryAddress"));
                     order.setCustomerId(rs.getInt("CustomerID"));
@@ -107,6 +116,9 @@ public class OrderService {
                 order.setOrderDate(rs.getDate("OrderDate"));
                 order.setOrderStatus(rs.getString("OrderStatus"));
                 order.setServiceType(rs.getString("ServiceType"));
+                order.setTotalWeight(rs.getDouble("TotalWeight"));
+                order.setTotalItem(rs.getDouble("TotalItem"));
+                order.setDuration(rs.getString("Duration"));
                 order.setTotalAmount(rs.getDouble("TotalAmount"));
                 order.setDeliveryAddress(rs.getString("DeliveryAddress"));
                 order.setCustomerId(rs.getInt("CustomerID"));
@@ -133,6 +145,9 @@ public class OrderService {
                     order.setOrderDate(rs.getDate("OrderDate"));
                     order.setOrderStatus(rs.getString("OrderStatus"));
                     order.setServiceType(rs.getString("ServiceType"));
+                    order.setTotalWeight(rs.getDouble("TotalWeight"));
+                    order.setTotalItem(rs.getDouble("TotalItem"));
+                    order.setDuration(rs.getString("Duration"));
                     order.setTotalAmount(rs.getDouble("TotalAmount"));
                     order.setDeliveryAddress(rs.getString("DeliveryAddress"));
                     order.setCustomerId(rs.getInt("CustomerID"));

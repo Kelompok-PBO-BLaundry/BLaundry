@@ -37,6 +37,9 @@ public class PlaceOrderServlet extends HttpServlet {
 
         int customerId = (Integer) session.getAttribute("customer_id");
         String serviceType = request.getParameter("service_type");
+        double weight = Double.parseDouble(request.getParameter("weight"));
+        double totalItem = Double.parseDouble(request.getParameter("number_of_items"));
+        String duration = request.getParameter("duration");
         double totalAmount = Double.parseDouble(request.getParameter("total_amount"));
         String deliveryAddress = "";
         Date date = Date.valueOf(LocalDate.now());
@@ -45,6 +48,9 @@ public class PlaceOrderServlet extends HttpServlet {
         order.setOrderDate(date);
         order.setOrderStatus("Pending");
         order.setServiceType(serviceType);
+        order.setTotalWeight(weight);
+        order.setTotalItem(totalItem);
+        order.setDuration(duration);
         order.setTotalAmount(totalAmount);
         order.setDeliveryAddress(deliveryAddress);
         order.setCustomerId(customerId);

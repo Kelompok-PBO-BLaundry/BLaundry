@@ -32,7 +32,8 @@
             <div class="order-box">
                 <div class="order-form">
                     <form action="${pageContext.request.contextPath}/customer/placeOrder" method="POST">
-                        <input type="hidden" name="service_type" value="Dry Clean">
+                        <input type="hidden" name="service_type" value="Shoe Wash">                                                 
+                        <input type="hidden" id="weight" name="weight" value = "0"/>             
                         <div class="form-group">
                             <label for="number_of_items">Number of item :</label>
                             <input type="number" id="number_of_items" name="number_of_items" min="1" placeholder="Enter number" required>
@@ -75,6 +76,8 @@
                 document.getElementById('total_amount').value = total;
             }
         }
+        
+       
     </script>
 </body>
 </html>
